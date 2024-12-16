@@ -3,12 +3,13 @@ import { AnimatePresence } from "framer-motion";
 import { Suspense, lazy, useEffect } from "react";
 import { LoadingProvider } from "./context/LoadingContext";
 import { FormProvider } from "./context/FormContext";
-import ErrorBoundary from "./components/ErrorBoundary";
+
 import ScrollProgress from "./components/ScrollProgress";
 import LoadingState from "./components/LoadingState";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import { measurePerformance, preloadImage } from "./utils/performance";
+import ErrorBoundary from "./Components/ErrorBoundary";
 
 // Lazy load route components with performance tracking
 const withLazyLoading = (importFn, name) => {

@@ -8,7 +8,7 @@ class ErrorBoundary extends Component {
   }
 
   static getDerivedStateFromError(error) {
-    return { hasError: true };
+    return { hasError: true }; // Xatolik bo'lsa, state ni yangilaydi
   }
 
   componentDidCatch(error, errorInfo) {
@@ -16,8 +16,7 @@ class ErrorBoundary extends Component {
       error: error,
       errorInfo: errorInfo
     });
-    // You can also log the error to an error reporting service here
-    console.error('Error caught by boundary:', error, errorInfo);
+    console.error('Error caught by boundary:', error, errorInfo); // Xatolikni konsolga chiqarish
   }
 
   render() {
@@ -27,6 +26,7 @@ class ErrorBoundary extends Component {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }} // Animatsiyaning davomiyligini qo'shish
             className="max-w-md w-full bg-gray-800 rounded-lg shadow-xl p-8 text-center"
           >
             <div className="text-6xl mb-4">😕</div>
@@ -50,6 +50,7 @@ class ErrorBoundary extends Component {
                 Go to Homepage
               </button>
             </div>
+
             {process.env.NODE_ENV === 'development' && (
               <div className="mt-6 text-left">
                 <p className="text-red-400 font-mono text-sm mb-2">
@@ -69,4 +70,4 @@ class ErrorBoundary extends Component {
   }
 }
 
-export default ErrorBoundary; 
+export default ErrorBoundary;
