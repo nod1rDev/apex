@@ -9,7 +9,8 @@ import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
 import { measurePerformance, preloadImage } from "./utils/performance";
 import ErrorBoundary from "./Components/ErrorBoundary";
-
+import Home from "./pages/Home";
+import Services from "./pages/Services";
 // Lazy loading with performance tracking
 const withLazyLoading = (importFn, name) => {
   return lazy(() =>
@@ -22,10 +23,7 @@ const withLazyLoading = (importFn, name) => {
   );
 };
 
-// Correct import paths
-const Home = withLazyLoading(() => import("./pages/Home"), "Home");
-const Services = withLazyLoading(() => import("./pages/Services"), "Services");
-const VoiceRecording = withLazyLoading(() => import("./pages/services/VoiceRecording"), "VoiceRecording");
+
 // Other routes...
 
 // Page Loader component
