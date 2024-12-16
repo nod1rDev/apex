@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes fadeInMenuItem {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@font-face {
+  font-family: "General Sans";
+  src: url("./fonts/GeneralSans-Regular.woff2") format("woff2"),
+    url("./fonts/GeneralSans-Regular.woff") format("woff"),
+    url("./fonts/GeneralSans-Regular.ttf") format("truetype");
+  font-weight: 400; /* Normallar uchun */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "General Sans";
+  src: url("./fonts/GeneralSans-Light.woff2") format("woff2"),
+    url("./fonts/GeneralSans-Light.woff") format("woff"),
+    url("./fonts/GeneralSans-Light.ttf") format("truetype");
+  font-weight: 300; /* Engil uchun */
+  font-style: normal;
+}
+@font-face {
+  font-family: "General Sans";
+  src: url("./fonts/GeneralSans-Bold.woff2") format("woff2"),
+    url("./fonts/GeneralSans-Bold.woff") format("woff"),
+    url("./fonts/GeneralSans-Bold.ttf") format("truetype");
+  font-weight: 700; /* Bold uchun */
+  font-style: normal;
+}
+
+body {
+  font-family: "General Sans", sans-serif;
+}
+
+.styled-text {
+  -webkit-text-stroke-width: 0.1175rem;
+  -webkit-text-stroke-color: #f9f4e8;
+  color: #0000;
+}
+
+.img_w {
+  object-fit: cover;
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  position: absolute;
+  inset: 0%;
+  transform: scale(1.01);
+}
