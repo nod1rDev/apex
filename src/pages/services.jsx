@@ -73,7 +73,7 @@ const Services = () => {
         keywords="voice recording services, data collection, AI solutions, project management, multilingual support, translation services, localization, content creation"
       />
 
-      {/* Hero Section */}
+ 
       <section className="relative h-[40vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Canvas>
