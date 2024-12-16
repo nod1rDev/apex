@@ -12,19 +12,8 @@ import ErrorBoundary from "./Components/ErrorBoundary";
 import Home from "./pages/Home";
 
 // Lazy loading uchun funksiyani qayta ishlatamiz
-const withLazyLoading = (importFn, name) => {
-  return lazy(() =>
-    measurePerformance(`Loading ${name}`, () =>
-      importFn().then((module) => {
-        console.log(`${name} loaded successfully`);
-        return module;
-      })
-    )
-  );
-};
 
-// `Services` sahifasini dinamik yuklash
-const Services = withLazyLoading(() => import("./pages/Services"), "Services");
+
 
 // Sahifa yuklanayotganda loader
 const PageLoader = () => (
@@ -65,7 +54,7 @@ function App() {
                   <Suspense fallback={<PageLoader />}>
                     <Routes>
                       <Route path="/" element={<Home />} />
-                      <Route path="/services" element={<Services />} />
+               
                       {/* Boshqa yo'nalishlar */}
                       <Route path="*" element={<NotFound />} />
                     </Routes>
