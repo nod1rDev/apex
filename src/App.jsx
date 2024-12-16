@@ -4,10 +4,10 @@ import { Suspense, lazy, useEffect } from "react";
 import { LoadingProvider } from "./context/LoadingContext";
 import { FormProvider } from "./context/FormContext";
 
-import ScrollProgress from "./components/ScrollProgress";
-import LoadingState from "./components/LoadingState";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+import ScrollProgress from "./Components/ScrollProgress";
+import LoadingState from "./Components/LoadingState";
+import Navbar from "./Components/Navbar";
+import Footer from "./Components/Footer";
 import { measurePerformance, preloadImage } from "./utils/performance";
 import ErrorBoundary from "./Components/ErrorBoundary";
 
