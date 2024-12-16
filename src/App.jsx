@@ -10,8 +10,8 @@ import Footer from "./Components/Footer";
 import { measurePerformance, preloadImage } from "./utils/performance";
 import ErrorBoundary from "./Components/ErrorBoundary";
 import Home from "./pages/Home";
-import Services from "./pages/Services";
-// Lazy loading with performance tracking
+
+// Lazy loading uchun funksiyani qayta ishlatamiz
 const withLazyLoading = (importFn, name) => {
   return lazy(() =>
     measurePerformance(`Loading ${name}`, () =>
@@ -23,16 +23,17 @@ const withLazyLoading = (importFn, name) => {
   );
 };
 
+// `Services` sahifasini dinamik yuklash
+const Services = withLazyLoading(() => import("./pages/Services"), "Services");
 
-// Other routes...
-
-// Page Loader component
+// Sahifa yuklanayotganda loader
 const PageLoader = () => (
   <div className="min-h-screen flex items-center justify-center">
     <LoadingState type="bars" color="blue" size="large" text="Loading page..." />
   </div>
 );
 
+// 404 sahifasi
 const NotFound = () => (
   <div className="min-h-screen flex items-center justify-center">
     <div className="text-center">
@@ -65,7 +66,7 @@ function App() {
                     <Routes>
                       <Route path="/" element={<Home />} />
                       <Route path="/services" element={<Services />} />
-                      {/* Other routes */}
+                      {/* Boshqa yo'nalishlar */}
                       <Route path="*" element={<NotFound />} />
                     </Routes>
                   </Suspense>
