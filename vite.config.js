@@ -5,6 +5,6 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   plugins: [react()],
   resolve: {
-    extensions: [".js", ".jsx"], // JS va JSX fayllar uchun kengaytma
+    extensions: [".js", ".jsx", ".ts", ".tsx"], // JS va JSX fayllar uchun kengaytma
   },
 });
